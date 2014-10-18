@@ -41,6 +41,7 @@ public:
         }
         return result; 
     }
+    //format a line just as the description in the problem
     string format(vector<string> &words, int length, int L)
     {
         string txt = words[0];
