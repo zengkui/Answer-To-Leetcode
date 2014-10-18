@@ -13,6 +13,7 @@ public:
         int n = 0;
         int length = 0;
         vector<string> :: iterator itr = words.begin();
+	//split words into multi-line
         while(itr != words.end())
         {
             if((*itr).length() + length + n <= L)
@@ -32,6 +33,7 @@ public:
         }
         if(n)
         {
+	    //process last line in special
             string mystr = format(part, length, length + part.size() - 1);
             for(int i = mystr.length(); i < L; ++i)
             {
