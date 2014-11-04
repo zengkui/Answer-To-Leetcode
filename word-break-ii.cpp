@@ -83,8 +83,18 @@ class Solution {
                 trie.insert(itr->c_str());
                 itr++;
             }
-            char buffer[102400];
-            const char *p = s.c_str();
+            if(checker(s.c_str()))
+            {
+                char *buffer = new char[s.length() * 2];
+                search(s.c_str(), buffer, 0, trie);
+                delete buffer;
+            }
+
+            return sen;
+        }
+    private:
+        bool checker(const char *p)
+        {
             int max_pos = -1;
             int len = 0;
             for(int i = 0;  p[i] !=0; ++i)
@@ -96,11 +106,10 @@ class Solution {
                 }
                 if(i >= max_pos)
                 {
-                    return sen;
+                    return false;
                 }
             }
-            search(s.c_str(), buffer, 0, trie);
-            return sen;
+            return true;
         }
         void search(const char *s, char buffer[], int len, const Trie &dict)
         {
