@@ -13,11 +13,9 @@ class Solution {
     public:
         vector<vector<int> > threeSum(vector<int> &num) {
             vector<VINT > ans;
-            char buffer[1024];
             int left;
             int right;
             int sum;
-            set<string> uniq;
 
             sort(num.begin(), num.end()); 
             for(int i = 0; i < num.size() && num[i] <= 0; ++i)
